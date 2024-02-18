@@ -1,0 +1,63 @@
+.label-input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-label {
+    text-transform: uppercase;
+    font-size: 0.5rem;
+    letter-spacing: 5px;
+    font-weight: bold;
+    color: var(--smokey-grey);
+}
+
+.error-label {
+    color: var(--light-red);
+}
+
+.input {
+    width: 5rem;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 1px solid var(--light-grey);
+    font-family: "Poppins";
+    font-weight: bold;
+    caret-color: var(--purple);
+}
+
+.error-input {
+    border: 1px solid var(--light-red);
+}
+
+.input:focus {
+    outline: 1px solid var(--purple);
+}
+
+input::placeholder {
+    font-family: "Poppins";
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 800px) {
+    .label-input-container {
+        max-width: 3rem;
+    }
+
+    .input {
+        width: 3rem;
+        padding: 10px 15px;
+        font-size: 0.8rem;
+    }
+
+    .input::placeholder {
+        font-size: 0.7rem;
+    }
+
+    .input-label {
+        font-size: 0.4rem;
+    }
+}
