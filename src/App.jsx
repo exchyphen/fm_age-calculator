@@ -17,6 +17,11 @@ function App() {
   const [errorYear, setErrorYear] = useState(false);
   const [errorMonth, setErrorMonth] = useState(false);
   const [errorDay, setErrorDay] = useState(false);
+
+  const [errorEmptyYear, setErrorEmptyYear] = useState(false);
+  const [errorEmptyMonth, setErrorEmptyMonth] = useState(false);
+  const [errorEmptyDay, setErrorEmptyDay] = useState(false);
+
   const [errorState, setErrorState] = useState(false);
 
   // functions
@@ -119,6 +124,11 @@ function App() {
     setErrorMonth(currErrorMonth);
     setErrorDay(currErrorDay);
 
+    // update empty errors
+    setErrorEmptyYear(inputYears === "");
+    setErrorEmptyMonth(inputMonths === "");
+    setErrorEmptyDay(inputDays === "");
+
     // check all error states
     if (currErrorYear && currErrorMonth && currErrorDay) {
       // case that all of them are empty:
@@ -163,6 +173,7 @@ function App() {
               placeholder="dd"
               errorState={errorDay}
               allError={errorState}
+              emptyError={errorEmptyDay}
               onChange={setInputDays}
               value={inputDays}
             ></AgeInput>
@@ -171,6 +182,7 @@ function App() {
               placeholder="mm"
               errorState={errorMonth}
               allError={errorState}
+              emptyError={errorEmptyMonth}
               onChange={setInputMonths}
               value={inputMonths}
             ></AgeInput>
@@ -179,6 +191,7 @@ function App() {
               placeholder="yyyy"
               errorState={errorYear}
               allError={errorState}
+              emptyError={errorEmptyYear}
               onChange={setInputYears}
               value={inputYears}
             ></AgeInput>

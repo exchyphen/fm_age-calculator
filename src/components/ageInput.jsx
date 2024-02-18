@@ -14,7 +14,7 @@ const AgeInput = (props) => {
             onChange={(e) => props.onChange(e.target.value)}
             required
           ></input>
-          {props.allError ? null : props.value === "" ? (
+          {props.allError ? null : props.emptyError ? (
             <div className="error-message">This field is required</div>
           ) : (
             <div className="error-message">Must be a valid {props.title}</div>
